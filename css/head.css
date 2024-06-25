@@ -1,0 +1,102 @@
+#header{
+    background-color: #006769;
+    display: flex;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 91px;    
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0px 0px 17px 17px;
+}
+#header #logo{
+    width: 60%;
+    height: 100%;
+    text-align: left;
+    margin-left: 19px;
+    margin-top: 11px;
+    display: flex;
+}
+#header #logo p{
+    margin-left: 19px;
+    font-size: 30px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+#header #logo img{
+    height: 69px;
+    width: 69px;
+    border-radius: 9999px;
+}
+#header #beranda{
+    width: 17%;
+    height: 100%;
+    text-align: right;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: 35px;   
+    font-family: sans-serif;
+    }
+#header #beranda:hover{
+    font-size: 22px;
+    }
+#header #login:hover{
+    font-size: 22px;
+    }
+#header #about:hover{
+    font-size: 22px;
+    }
+#header #about{
+    width: 10%;
+    height: 100%;
+    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    font-size: 20px;
+    margin-top: 35px;   
+    }
+#header #login{
+    width: 10%;
+    height: 100%;
+    text-align: right;
+    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 35px;
+    margin-right: 36px;
+    font-size: 20px;
+}
+#header #beranda a{
+    color: aliceblue;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+}
+#header #login a{
+    color: aliceblue;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+}
+#header #about a{
+    color: aliceblue;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 600;
+}
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 200px;
+    margin-left: 8.5%;
+    background-color: #F4A261; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+ .back-button:hover {
+    background-color: #E76F51; /* Warna latar belakang saat dihover */
+}

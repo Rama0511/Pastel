@@ -1,0 +1,67 @@
+#container-slogan{
+    width: 80%;
+    margin-left: 10%;
+    height: 690px;
+    margin-top: 50px;
+    background-color: #40A578;
+    border-radius: 20px;
+}
+#container-slogan #isi1{
+    display: flex;
+    margin-left: 50px;
+}
+#container-slogan #isi{
+    display: flex;
+}
+#container-slogan #isi button{
+    margin-top: 20px;
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;
+    background-color: #9DDE8B;
+    border: #EDEDED;
+    margin-left: 20px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+#container-slogan #isi button:hover{
+    background-color: #E6FF94;
+}
+#container-slogan #isi h1{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 80px;
+    margin-left: 20px;
+    margin-top: 70px;
+}
+#container-slogan #isi p{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: justify;
+    width: 650px;
+}
+#container-slogan #isi1 h1{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 80px;
+    margin-left: 20px;
+    margin-top: 70px;
+}
+#container-slogan #isi1 p{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 10px;
+    text-align: justify;
+    width: 850px;
+}
+#container-slogan #isi img{
+    height: 250px;
+    margin-top: 80px;
+    margin-right: 40px;
+}

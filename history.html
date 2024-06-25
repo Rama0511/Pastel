@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>History</title>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="source/img/logo1.png" alt="Logo">
+            <p>P.A.S.T.E.L</p>
+        </div>
+        <div id="beranda">
+            <a href="index_afterlogin.html">Beranda</a>
+        </div>
+        <div id="about">
+            <a href="about_afterlogin.html">About</a>
+        </div>
+    </div>
+    <br>
+    <button onclick="goBack()" class="back-button">Back</button>
+    <script>
+    function goBack() {
+    window.history.back();
+    }
+    </script>
+    <div id="profile-container">
+        <h1>History Laporan</h1>
+        <table id="history-table">
+            <tr>
+                <th>No</th>
+                <th>Tanggal</th>
+                <th>Laporan</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>20/06/2024</td>
+                <td>Laporan 1</td>
+                <td>Selesai</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>15/06/2024</td>
+                <td>Laporan 2</td>
+                <td>Proses</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; RoMuSa - Gemastik 2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>

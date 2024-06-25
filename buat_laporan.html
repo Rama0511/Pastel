@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Buat Laporan Baru</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #buat-laporan-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        #buat-laporan-container label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #buat-laporan-container input, #buat-laporan-container textarea, #buat-laporan-container button, #buat-laporan-container select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #buat-laporan-container textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        #buat-laporan-container button {
+            background-color: #40A578;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            width: auto;
+        }
+
+        #buat-laporan-container button:hover {
+            background-color: #9DDE8B;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .slide-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .slide-content {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="source/img/logo1.png" alt="Logo">
+            <p>P.A.S.T.E.L</p>
+        </div>
+        <div id="beranda">
+            <a href="index.html">Beranda</a>
+        </div>
+        <div id="about">
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <div id="buat-laporan-container">
+        <h1>Buat Laporan Baru</h1>
+        <form id="reportForm" onsubmit="submitForm(event)">
+            <!-- Slide 1: Kategori -->
+            <div class="slide active" id="slide1">
+                <div class="slide-header">Pilih Kategori Sampah Elektronik</div>
+                <div class="slide-content">
+                    <label for="kategori">Kategori:</label>
+                    <select id="kategori" name="kategori">
+                        <option value="televisi">Televisi</option>
+                        <option value="kulkas">Kulkas</option>
+                        <option value="komputer">Komputer</option>
+                        <!-- Tambah kategori lainnya sesuai kebutuhan -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Slide 2: Merk, Seri, Tahun -->
+            <div class="slide" id="slide2">
+                <div class="slide-header">Informasi Produk</div>
+                <div class="slide-content">
+                    <label for="merk">Merk:</label>
+                    <input type="text" id="merk" name="merk">
+                    
+                    <label for="seri">Seri:</label>
+                    <input type="text" id="seri" name="seri">
+                    
+                    <label for="tahun">Tahun:</label>
+                    <input type="text" id="tahun" name="tahun">
+                </div>
+            </div>
+
+            <!-- Slide 3: Foto -->
+            <div class="slide" id="slide3">
+                <div class="slide-header">Upload Foto</div>
+                <div class="slide-content">
+                    <label for="foto">Upload Foto:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" onchange="previewImage(event)">
+                    <img id="previewImg" class="preview-image" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Slide 4: Lokasi -->
+            <div class="slide" id="slide4">
+                <div class="slide-header">Detail Lokasi</div>
+                <div class="slide-content">
+                    <label for="lokasi">Lokasi:</label>
+                    <textarea id="lokasi" name="lokasi"></textarea>
+                </div>
+            </div>
+
+            <!-- Slide 5: Pratinjau -->
+            <div class="slide" id="slide5">
+                <div class="slide-header">Pratinjau Laporan Anda</div>
+                <div class="slide-content">
+                    <p><strong>Kategori:</strong> <span id="previewKategori"></span></p>
+                    <p><strong>Merk:</strong> <span id="previewMerk"></span></p>
+                    <p><strong>Seri:</strong> <span id="previewSeri"></span></p>
+                    <p><strong>Tahun:</strong> <span id="previewTahun"></span></p>
+                    <p><strong>Lokasi:</strong> <span id="previewLokasi"></span></p>
+                    <img id="previewFoto" class="preview-image" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Slide 6: Konfirmasi -->
+            <div class="slide" id="slide6">
+                <div class="slide-header">Konfirmasi Laporan</div>
+                <div class="slide-content">
+                    <h2>Terima kasih!</h2>
+                    <p>Laporan Anda telah berhasil dikirim.</p>
+                    <p>Nomor Tiket: <span id="ticketNumber"></span></p>
+                    <p>Status: Sedang diproses</p>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button type="button" id="prevBtn" onclick="changeSlide(-1)">Sebelumnya</button>
+                <button type="button" id="nextBtn" onclick="changeSlide(1)">Selanjutnya</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; RoMuSa - Gemastik 2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+
+            document.getElementById('prevBtn').style.display = currentSlide === 0 ? 'none' : 'inline-block';
+            document.getElementById('nextBtn').textContent = currentSlide === slides.length - 2 ? 'Kirim' : 'Selanjutnya';
+        }
+
+        function changeSlide(n) {
+            if (currentSlide === slides.length - 2 && n === 1) {
+                updatePreview();
+            }
+            if (currentSlide === slides.length - 1 && n === 1) {
+                window.location.href = 'profile.html';
+                return;
+            }
+            showSlide(currentSlide + n);
+        }
+
+        function updatePreview() {
+            document.getElementById('previewKategori').textContent = document.getElementById('kategori').value;
+            document.getElementById('previewMerk').textContent = document.getElementById('merk').value;
+            document.getElementById('previewSeri').textContent = document.getElementById('seri').value;
+            document.getElementById('previewTahun').textContent = document.getElementById('tahun').value;
+            document.getElementById('previewLokasi').textContent = document.getElementById('lokasi').value;
+            const fileInput = document.getElementById('foto');
+            const previewFoto = document.getElementById('previewFoto');
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewFoto.src = e.target.result;
+                    previewFoto.style.display = 'block';
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                previewFoto.style.display = 'none';
+            }
+            document.getElementById('ticketNumber').textContent = '123456'; // Example ticket number
+        }
+
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('previewImg');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            changeSlide(1);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #content {
+            flex: 1;
+        }
+        #edit-profile-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #edit-profile-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        #edit-profile-container label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #edit-profile-container input, #edit-profile-container button {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #edit-profile-container button {
+            background-color: #40A578;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        #edit-profile-container button:hover {
+            background-color: #9DDE8B;
+        }
+        footer {
+            background-color: #006769;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            width: 200px;
+            margin-left: 8.5%;
+            background-color: #F4A261; /* Warna latar belakang */
+            color: #fff; /* Warna teks */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+         .back-button:hover {
+            background-color: #E76F51; /* Warna latar belakang saat dihover */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="source/img/logo1.png" alt="Logo">
+            <p>P.A.S.T.E.L</p>
+        </div>
+        <div id="beranda">
+            <a href="index_afterlogin.html">Beranda</a>
+        </div>
+        <div id="about">
+            <a href="about_afterlogin.html">About</a>
+        </div>
+    </div>
+    <br>
+    <button onclick="goBack()" class="back-button">Back</button>
+    <script>
+    function goBack() {
+    window.history.back();
+    }
+    </script>
+    <div id="content" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div id="edit-profile-container">
+            <h1>Edit Profile</h1>
+            <form>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" value="Nama Pengguna">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="user@example.com">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+
+                <label for="profile-pic">Profile Picture:</label>
+                <input type="file" id="profile-pic" name="profile-pic">
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

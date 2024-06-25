@@ -1,0 +1,54 @@
+#container{
+    width: 60%;
+    margin-left: 20%;
+    height: 400px;
+    background-color: #006769;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+#container #page{
+    width: 80%;
+    height: 80%;
+    margin-top: 3%;
+    margin-left: 10%;
+    background-color: #40A578;
+    border-radius: 20px;
+}
+#container #page h2 {
+    margin-bottom: 20px;
+}
+#container #page input[type="text"],
+#container #page input[type="password"] {
+    width: 77%;
+    padding: 10px;
+    margin: 10px 0;
+    margin-left: 10%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#container #page input[type="submit"] {
+    background-color: #9DDE8B;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    margin-left: 25%;
+}
+#container #page input[type="submit"]:hover {
+    background-color: #E6FF94;
+}
+#container #page .register-link {
+    margin-top: 10px;
+    display: block;
+    margin-left: 32%;
+}
+#container #page .register-link a {
+    color: white;
+    text-decoration: none;
+}
+#container #page .register-link a:hover {
+    text-decoration: underline;
+}
